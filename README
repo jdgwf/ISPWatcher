@@ -2,3 +2,8 @@ ISPWatcher is a small python script that will watch various websites
 services via the XML file email recipients if the service is down.
 
 I recommend creating a cron job for every 15 minutes.
+
+Cronjob Example:
+#minute hour    mday    month   wday            command
+#-------------------------------------------------------------------------------
+*/15    *       *       *       *       /home/gauthic/bin/ISPWatcher/ISPWatcher.py >> /home/gauthic/bin/ISPWatcher/ISPWatcher.log
