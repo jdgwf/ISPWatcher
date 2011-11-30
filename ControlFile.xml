@@ -10,6 +10,7 @@
     <MailServerPassword>XXXXXXXXXX</MailServerPassword>
   </Options>
   <Server>
+    <!-- I used this to check the status of a Microsoft Jet driver that had issues -->
     <Host>http://webservices.SOMEISP.net/dbcheck.asp</Host>
     <Type>http</Type>
     <WatchFor>true</WatchFor>
@@ -17,6 +18,7 @@
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
   </Server>
   <Server>
+    <!-- Check the web status of a mail server -->
     <Host>http://mail.SOMEISP.net/webmail</Host>
     <Type>http</Type>
     <WatchFor>password</WatchFor>
@@ -24,6 +26,7 @@
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
   </Server>
   <Server>
+    <!-- Check SSL SMTP port for a mail server -->
     <Host>mail.SOMEISP.net</Host>
     <Port>465</Port>
     <Type>smtp</Type>
@@ -31,12 +34,14 @@
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
   </Server>
   <Server>
+    <!-- Check SMTP port for a mail server -->
     <Host>smtp2.SOMEISP.net</Host>
     <Type>smtp</Type>
     <TimeoutAlert>true</TimeoutAlert>
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
   </Server>
   <Server>
+    <!-- Check POP3 port for a mail server -->
     <Host>mail.SOMEISP.net</Host>
     <Type>pop3</Type>
     <Port>110</Port>
@@ -44,6 +49,7 @@
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
   </Server>
   <Server>
+    <!-- Check IMAP port for a mail server -->
     <Host>mail.SOMEISP.net</Host>
     <Type>imap4</Type>
     <Port>143</Port>
@@ -51,6 +57,7 @@
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
   </Server>
   <Server>
+    <!-- Check IMAP SSL port for a mail server -->
     <Host>mail.SOMEISP.net</Host>
     <Type>imap4ssl</Type>
     <Port>993</Port>
@@ -58,6 +65,7 @@
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
   </Server>
   <Server>
+    <!-- Check POP3 SSL port for a mail server -->
     <Host>mail.SOMEISP.net</Host>
     <Type>pop3ssl</Type>
     <Port>995</Port>
@@ -65,6 +73,7 @@
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
   </Server>
   <Server>
+    <!-- This one will look for a word, if it exists it'll flag the notifier (WarnIF) -->
     <Host>http://www.SOMEEASILYHACKEDSITE.com</Host>
     <Type>http</Type>
     <WarnIf>hack</WarnIf>
