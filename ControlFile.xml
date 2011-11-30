@@ -1,8 +1,9 @@
 <?xml version="1.0" standalone="yes"?>
+<!-- This is intended as an example.... -->
 <ISPWatcher>
   <Options>
     <MailServer>smtp.gmail.com</MailServer>
-    <MailFrom>nexi@alliante.com</MailFrom>
+    <MailFrom>ME@MYFROMDOMAIN.com</MailFrom>
     <MailServerStartTLS>1</MailServerStartTLS>
     <MailServerPort>587</MailServerPort>
     <MailServerUserName>XXXXXXXXXX</MailServerUserName>
