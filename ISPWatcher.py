@@ -9,11 +9,14 @@
 # Tested on MacOS Snow Leopard (10.6) and Ubuntu Linux 9.04 and 9.10
 #
 # - Version History -
+# 2.0.2 - November 30, 2011 
+#	Removed single ticks around HTTP host emails so that iPhone and other devices will 
+#	link straight to website from email instead of creating a 404
 # 2.0.1 - November 21, 2008 
 #	Added command line options for help (-h), quiet (-q), test (-t) and version (-v)
 #
 ########################################################################################
-VERSION = "2.0.1"
+VERSION = "2.0.2"
 
 import datetime
 import urllib
@@ -323,20 +326,20 @@ def CheckHTTPServer(oServer):
 			sms = "0"
 		if warnif != "":
 			if pagedata.find(watchfor) > 0:
-				CreateEmailMessage(recipients, "HTTP Error: Found '" + warnif + "' in '" + host + "' at " +  now.strftime("%Y-%m-%d %H:%M"), "HTTP", sms)
-				MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": ERROR '" + warnif + "' was found in HTTP host '" + host + "'")
-				MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": '" + warnif + "' was found in HTTP host '" + host + "'")
+				CreateEmailMessage(recipients, "HTTP Error: Found '" + warnif + "' in " + host + " at " +  now.strftime("%Y-%m-%d %H:%M"), "HTTP", sms)
+				MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": ERROR '" + warnif + "' was found in HTTP host " + host + "")
+				MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": '" + warnif + "' was found in HTTP host " + host + "")
 			else:
-				MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": '" + warnif + "' was not found in HTTP host '" + host + "'")
+				MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": '" + warnif + "' was not found in HTTP host " + host + "")
 		if watchfor != "":
 			if pagedata.find(watchfor) == -1:
-				CreateEmailMessage(recipients, "HTTP Error: Can't find '" + watchfor + "' in '" + host + "' at " +  now.strftime("%Y-%m-%d %H:%M"), "HTTP", sms)
-				MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": ERROR '" + watchfor + "' was NOT found in HTTP host '" + host + "'")
+				CreateEmailMessage(recipients, "HTTP Error: Can't find '" + watchfor + "' in " + host + " at " +  now.strftime("%Y-%m-%d %H:%M"), "HTTP", sms)
+				MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": ERROR '" + watchfor + "' was NOT found in HTTP host " + host + "")
 			else:
-				MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": '" + watchfor + "' was found in HTTP host '" + host + "'")
+				MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": '" + watchfor + "' was found in HTTP host " + host + "")
 	except:
-		CreateEmailMessage(recipients, "HTTP Error: Can't connect to '" + host + "' at " +  now.strftime("%Y-%m-%d %H:%M"), "HTTP", sms)
-		MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Can't connect to HTTP host '" + host + "'")
+		CreateEmailMessage(recipients, "HTTP Error: Can't connect to " + host + " at " +  now.strftime("%Y-%m-%d %H:%M"), "HTTP", sms)
+		MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Can't connect to HTTP host " + host + "")
 
 def CreateEmailMessage(recipients, message, type, sms):
 	"""Creates an email message and stacks them on the EMAILS global variable
