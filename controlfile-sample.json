@@ -1,0 +1,93 @@
+{
+	"options" : {
+	    "mailserver" : "smtp.gmail.com",
+	    "mailfrom" : "me@myfromdomain.com",
+	    "mailserverstarttls" : "1",
+	    "mailserverport" : "587",
+	    "mailserverusername" : "xxxxxxxxxx",
+	    "mailserverpassword" : "xxxxxxxxxx"
+	},
+
+	"servers" : [
+		{
+			"_comment" : "i used this to check the status of a microsoft jet driver that had issues",
+			"host" : "http://webservices.someisp.net/dbcheck.asp",
+			"active" : "1",
+			"type" : "http",
+			"watchfor" : "true",
+			"timeoutalert" : "true",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net"
+		},
+		{
+			"_comment" : "check the web status of a mail server",
+			"host" : "http://mail.someisp.net/webmail",
+			"active" : "1",
+			"type" : "http",
+			"watchfor" : "password",
+			"timeoutalert" : "true",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+    	},
+    	{
+			"_comment" : "check ssl smtp port for a mail server",
+			"host" : "mail.someisp.net",
+			"active" : "1",
+			"port" : "465",
+			"type" : "smtp",
+			"timeoutalert" : "true",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+    	},
+    	{
+			"_comment" : "check smtp port for a mail server",
+			"active" : "1",
+			"host" : "smtp2.someisp.net",
+			"type" : "smtp",
+			"timeoutalert" : "true",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+		},
+		{
+			"_comment" : "check pop3 port for a mail server",
+			"active" : "1",
+			"host" : "mail.someisp.net",
+			"type" : "pop3",
+			"port" : "110",
+			"timeoutalert" : "true",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+		},
+		{
+			"_comment" : "check imap port for a mail server",
+			"active" : "1",
+			"host" : "mail.someisp.net",
+			"type" : "imap4",
+			"port" : "143",
+			"timeoutalert" : "true",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+		},
+		{
+			"_comment" : "check imap ssl port for a mail server",
+			"host" : "mail.someisp.net",
+			"active" : "1",
+			"type" : "imap4ssl",
+			"port" : "993",
+			"timeoutalert" : "true",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+		},
+		{
+			"_comment" : "check pop3 ssl port for a mail server",
+			"host" : "mail.someisp.net",
+			"active" : "1",
+			"type" : "pop3ssl",
+			"port" : "995",
+			"timeoutalert" : "true",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+		},
+		{
+			"_comment" : "this one will look for a word, if it exists it'll flag the notifier (warnif)",
+			"host" : "http://www.someeasilyhackedsite.com",
+			"active" : "1",
+			"type" : "http",
+			"warnif" : "hack",
+			"timeoutalert" : "false",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+		}
+	]
+}

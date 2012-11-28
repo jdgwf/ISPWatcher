@@ -16,6 +16,7 @@
     <WatchFor>true</WatchFor>
     <TimeoutAlert>true</TimeoutAlert>
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
+    <Active>1</Active>
   </Server>
   <Server>
     <!-- Check the web status of a mail server -->
@@ -24,6 +25,7 @@
     <WatchFor>password</WatchFor>
     <TimeoutAlert>true</TimeoutAlert>
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
+    <Active>1</Active>
   </Server>
   <Server>
     <!-- Check SSL SMTP port for a mail server -->
@@ -32,6 +34,7 @@
     <Type>smtp</Type>
     <TimeoutAlert>true</TimeoutAlert>
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
+    <Active>1</Active>
   </Server>
   <Server>
     <!-- Check SMTP port for a mail server -->
@@ -39,6 +42,7 @@
     <Type>smtp</Type>
     <TimeoutAlert>true</TimeoutAlert>
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
+    <Active>1</Active>
   </Server>
   <Server>
     <!-- Check POP3 port for a mail server -->
@@ -47,6 +51,7 @@
     <Port>110</Port>
     <TimeoutAlert>true</TimeoutAlert>
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
+    <Active>1</Active>
   </Server>
   <Server>
     <!-- Check IMAP port for a mail server -->
@@ -55,6 +60,7 @@
     <Port>143</Port>
     <TimeoutAlert>true</TimeoutAlert>
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
+    <Active>1</Active>
   </Server>
   <Server>
     <!-- Check IMAP SSL port for a mail server -->
@@ -63,6 +69,7 @@
     <Port>993</Port>
     <TimeoutAlert>true</TimeoutAlert>
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
+    <Active>1</Active>
   </Server>
   <Server>
     <!-- Check POP3 SSL port for a mail server -->
@@ -71,6 +78,7 @@
     <Port>995</Port>
     <TimeoutAlert>true</TimeoutAlert>
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
+    <Active>1</Active>
   </Server>
   <Server>
     <!-- This one will look for a word, if it exists it'll flag the notifier (WarnIF) -->
@@ -79,6 +87,7 @@
     <WarnIf>hack</WarnIf>
     <TimeoutAlert>false</TimeoutAlert>
     <Recipients>me@MYDOMAIN.net,MYATTNUMBER@txt.att.net</Recipients>
+    <Active>1</Active>
   </Server>
 
 </ISPWatcher>
