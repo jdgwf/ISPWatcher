@@ -25,24 +25,24 @@
 			"type" : "http",
 			"watchfor" : "password",
 			"timeoutalert" : "true",
-			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
-    	},
-    	{
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net"
+		},
+		{
 			"_comment" : "check ssl smtp port for a mail server",
 			"host" : "mail.someisp.net",
 			"active" : "1",
 			"port" : "465",
 			"type" : "smtp",
 			"timeoutalert" : "true",
-			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
-    	},
-    	{
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net"
+		},
+		{
 			"_comment" : "check smtp port for a mail server",
 			"active" : "1",
 			"host" : "smtp2.someisp.net",
 			"type" : "smtp",
 			"timeoutalert" : "true",
-			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net"
 		},
 		{
 			"_comment" : "check pop3 port for a mail server",
@@ -51,7 +51,7 @@
 			"type" : "pop3",
 			"port" : "110",
 			"timeoutalert" : "true",
-			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net"
 		},
 		{
 			"_comment" : "check imap port for a mail server",
@@ -60,7 +60,7 @@
 			"type" : "imap4",
 			"port" : "143",
 			"timeoutalert" : "true",
-			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net"
 		},
 		{
 			"_comment" : "check imap ssl port for a mail server",
@@ -69,7 +69,7 @@
 			"type" : "imap4ssl",
 			"port" : "993",
 			"timeoutalert" : "true",
-			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net"
 		},
 		{
 			"_comment" : "check pop3 ssl port for a mail server",
@@ -78,7 +78,7 @@
 			"type" : "pop3ssl",
 			"port" : "995",
 			"timeoutalert" : "true",
-			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net"
 		},
 		{
 			"_comment" : "this one will look for a word, if it exists it'll flag the notifier (warnif)",
@@ -87,7 +87,7 @@
 			"type" : "http",
 			"warnif" : "hack",
 			"timeoutalert" : "false",
-			"recipients" : "me@mydomain.net,myattnumber@txt.att.net",
+			"recipients" : "me@mydomain.net,myattnumber@txt.att.net"
 		}
 	]
 }
