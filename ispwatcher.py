@@ -87,27 +87,27 @@ def CheckServerJSON(settings):
 	for key, value in settings["options"].items():
 		if key.lower() == "mailserver":
 			MAILSERVER = value;
-			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration mailserver: " + MAILSERVER)
+			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found JSON configuration mailserver: " + MAILSERVER)
 
 		if key.lower() == "mailserverport":
 			MAILSERVERPORT = value;
-			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration mailserverport: " + MAILSERVERPORT)
+			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found JSON configuration mailserverport: " + MAILSERVERPORT)
 
 		if key.lower() == "mailserverusername":
 			MAILSERVERUSERNAME = value;
-			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration mailserverusername: " + MAILSERVERUSERNAME)
+			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found JSON configuration mailserverusername: " + MAILSERVERUSERNAME)
 
 		if key.lower() == "mailserverstarttls":
 			MAILSERVERSTARTTLS = value;
-			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration mailserverstarttls: " + MAILSERVERSTARTTLS)
+			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found JSON configuration mailserverstarttls: " + MAILSERVERSTARTTLS)
 
 		if key.lower() == "mailserverpassword":
 			MAILSERVERPASSWORD = value;
-			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration mailserverpassword: " + MAILSERVERPASSWORD)
+			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found JSON configuration mailserverpassword: " + MAILSERVERPASSWORD)
 
 		if key.lower() == "mailfrom":
 			MAILFROM = value;
-			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration mailfrom: " + MAILFROM)
+			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found JSON configuration mailfrom: " + MAILFROM)
 
 	for server in settings["servers"]:
 		sms = "0"
