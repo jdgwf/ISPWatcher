@@ -4,6 +4,7 @@
   <Options>
     <MailServer>smtp.gmail.com</MailServer>
     <MailFrom>ME@MYFROMDOMAIN.com</MailFrom>
+    <MailSubject>ISPWatcher2 Failure</MailSubject>
     <MailServerStartTLS>1</MailServerStartTLS>
     <MailServerPort>587</MailServerPort>
     <MailServerUserName>XXXXXXXXXX</MailServerUserName>

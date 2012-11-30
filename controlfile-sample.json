@@ -5,7 +5,8 @@
 	    "mailserverstarttls" : "1",
 	    "mailserverport" : "587",
 	    "mailserverusername" : "xxxxxxxxxx",
-	    "mailserverpassword" : "xxxxxxxxxx"
+	    "mailserverpassword" : "xxxxxxxxxx",
+	    "mailsubject" : "ISPWatcher2 Failure"
 	},
 
 	"servers" : [
