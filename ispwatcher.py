@@ -41,6 +41,7 @@ MAILSERVERUSERNAME = ""
 MAILSERVERPASSWORD = ""
 MAILSERVERSTARTTLS = 1
 MAILFROM = ""
+MAILSUBJECT = ""
 EMAILS = {'':''}
 
 def printversion():
@@ -87,27 +88,31 @@ def CheckServerJSON(settings):
 	for key, value in settings["options"].items():
 		if key.lower() == "mailserver":
 			MAILSERVER = value;
-			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration mailserver: " + MAILSERVER)
+			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found JSON configuration mailserver: " + MAILSERVER)
 
 		if key.lower() == "mailserverport":
 			MAILSERVERPORT = value;
-			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration mailserverport: " + MAILSERVERPORT)
+			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found JSON configuration mailserverport: " + MAILSERVERPORT)
 
 		if key.lower() == "mailserverusername":
 			MAILSERVERUSERNAME = value;
-			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration mailserverusername: " + MAILSERVERUSERNAME)
+			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found JSON configuration mailserverusername: " + MAILSERVERUSERNAME)
 
 		if key.lower() == "mailserverstarttls":
 			MAILSERVERSTARTTLS = value;
-			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration mailserverstarttls: " + MAILSERVERSTARTTLS)
+			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found JSON configuration mailserverstarttls: " + MAILSERVERSTARTTLS)
 
 		if key.lower() == "mailserverpassword":
 			MAILSERVERPASSWORD = value;
-			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration mailserverpassword: " + MAILSERVERPASSWORD)
+			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found JSON configuration mailserverpassword: " + MAILSERVERPASSWORD)
 
 		if key.lower() == "mailfrom":
 			MAILFROM = value;
-			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration mailfrom: " + MAILFROM)
+			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found JSON configuration mailfrom: " + MAILFROM)
+
+		if key.lower() == "mailsubject":
+			MAILSUBJECT = value;
+			MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found JSON configuration mailsubject: " + MAILSUBJECT)
 
 	for server in settings["servers"]:
 		sms = "0"
@@ -192,6 +197,7 @@ def CheckServerXML(oServer):
 	global MAILSERVERPASSWORD
 	global MAILFROM
 	global MAILSERVERSTARTTLS
+	global MAILSUBJECT
 	type = ""
 	for oAttributes in oServer.childNodes:
 		if oAttributes.nodeType != minidom.Node.TEXT_NODE:
@@ -220,6 +226,10 @@ def CheckServerXML(oServer):
 			if oAttributes.nodeName.lower() == "mailfrom":
 				MAILFROM =  oAttributes.childNodes[0].nodeValue
 				MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration MailFrom: " + MAILFROM)
+
+			if oAttributes.nodeName.lower() == "mailsubject":
+				MAILSUBJECT =  oAttributes.childNodes[0].nodeValue
+				MakeLog( now.strftime("%Y-%m-%d %H:%M") + ": Found XML configuration MailSubject: " + MAILSUBJECT)
 
 
 	sms = "0"
@@ -403,10 +413,11 @@ def SendEmails():
 	Returns nothing."""
         global MAILSERVER
         global MAILSERVERPORT
-	global MAILSERVERSTARTTLS
+        global MAILSERVERSTARTTLS
         global MAILSERVERUSERNAME
         global MAILSERVERPASSWORD
-	global MAILFROM
+        global MAILFROM
+        global MAILSUBJECT
 
 	MAILSERVERPORT = int(MAILSERVERPORT)
 
@@ -419,7 +430,7 @@ To: %s
 Subject: %s
 
 %s
-""" % (MAILFROM, recipients, "ISPWatcher2 Failure", message)
+""" % (MAILFROM, recipients, MAILSUBJECT, message)
 
 			server = smtplib.SMTP(MAILSERVER,MAILSERVERPORT)
 			if MAILSERVERSTARTTLS > 0:
