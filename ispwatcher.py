@@ -20,8 +20,10 @@
 #	Lower Cased Node Names - no more case sensitive XML
 # 	JSON control file support support (also lower cased variable names)
 #	Streamlined code
+# 2.1.1 - April 1, 2014
+#	Added Date to the email headers as some clients can't derive the Date: from Received
 ########################################################################################
-VERSION = "2.1.0"
+VERSION = "2.1.1"
 
 import datetime
 import urllib
