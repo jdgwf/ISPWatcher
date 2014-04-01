@@ -434,7 +434,7 @@ Subject: %s
 Date: %s
 
 %s
-""" % (MAILFROM, recipients, MAILSUBJECT, message, day + ', ' + date + ' -0000')
+""" % (MAILFROM, recipients, MAILSUBJECT, day + ', ' + date + ' -0000', message)
 
 			server = smtplib.SMTP(MAILSERVER,MAILSERVERPORT)
 			if MAILSERVERSTARTTLS > 0:
