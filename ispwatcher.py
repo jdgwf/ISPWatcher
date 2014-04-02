@@ -424,7 +424,7 @@ def SendEmails():
 	MAILSERVERPORT = int(MAILSERVERPORT)
 
 	day = now.strftime('%a')
-	date = now.strftime('%d %b %Y %X')
+	date = now.strftime('%d %b %Y %X %z')
 
 	for recipients in  EMAILS.keys():
 		message = EMAILS[recipients]
@@ -436,7 +436,7 @@ Subject: %s
 Date: %s
 
 %s
-""" % (MAILFROM, recipients, MAILSUBJECT, day + ', ' + date + ' -0000', message)
+""" % (MAILFROM, recipients, MAILSUBJECT, day + ', ' + date, message)
 
 			server = smtplib.SMTP(MAILSERVER,MAILSERVERPORT)
 			if MAILSERVERSTARTTLS > 0:
