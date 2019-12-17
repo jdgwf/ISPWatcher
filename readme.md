@@ -34,6 +34,10 @@ Don't forget to chmod +x the ispwatcher.py file if you use the above as well as 
 	Added active field for active/inactive watched services
 	JSON control file support support
 	Note that there is NO COMMENTING in standard JSON (although I use an unused _comment field), so XML may still be your preference. I don't foresee support for XML going away.
+* 3.0.0. - Dec 17, 2019
+	Upgraded to Python3
+
+
 
 ##TO DO
 Error catching for JSON and XML Parsing.
